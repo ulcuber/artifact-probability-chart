@@ -1,6 +1,8 @@
-# artifact-probability-chart
+# Artifact probability chart
 
-This template should help get you started developing with Vue 3 in Vite.
+![Select slots](docs/preview.jpg)
+
+![See chart](docs/preview-chart.jpg)
 
 ## Recommended IDE Setup
 
