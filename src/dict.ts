@@ -109,3 +109,5 @@ export const MAX_UPGRADES = 5;
 export const minorAffixSlotUpgradeTimesProbabilities = Array(MAX_UPGRADES).map(
   (_, i) => binominalProbability(MAX_ROLLS, i, MINOR_AFFIX_SLOT_UPGRADE_PROBABILITY),
 );
+
+export const WRONG_SET_PROBABILITY = 0.5;

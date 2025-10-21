@@ -14,7 +14,7 @@ import {
   CategoryScale,
 } from 'chart.js';
 
-import { ATTRIBUTE } from '../dict';
+import { ATTRIBUTE, WRONG_SET_PROBABILITY } from '../dict';
 import { expectedTrials, trialsToDays, trialsForConfidence } from '../utils';
 
 ChartJS.register(
@@ -40,6 +40,7 @@ const props = defineProps({
 const { t } = useI18n({});
 
 const labels = computed(() => [
+  t('set'),
   ATTRIBUTE[props.mainLabel] || '',
   ...props.slotsLabels.map((a, i) => String(i + 1) + ' ' + (ATTRIBUTE[a] || '')),
   t('upgrades'),
@@ -190,6 +191,7 @@ const giColorSchemes = {
 };
 
 const data = computed(() => [
+  WRONG_SET_PROBABILITY,
   props.main,
   ...props.artifactSlots,
   props.upgrades,
@@ -331,14 +333,16 @@ const confidenceChart = computed(() => ({
     "sum-probability": "Probability sum",
     "n-of-trials": "Trials",
     "n-of-days": "Days",
-    "upgrades": "Upgrades"
+    "upgrades": "Upgrades",
+    "set": "Set"
   },
   "ru": {
     "probability": "Вероятность",
     "sum-probability": "Суммарная вероятность",
     "n-of-trials": "Попыток",
     "n-of-days": "Дней",
-    "upgrades": "Улучшения"
+    "upgrades": "Улучшения",
+    "set": "Набор"
   }
 }
 </i18n>
